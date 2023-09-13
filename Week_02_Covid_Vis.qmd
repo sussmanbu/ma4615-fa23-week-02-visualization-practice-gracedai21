@@ -39,15 +39,15 @@ covid_data_count |>
 
 ```{r my_plot}
 covid_data_count |> 
-  filter(race == "Total", state_name == "Florida") |> 
+  filter(race == "Total", state_name == "Florida" | state_name == "Massachusetts" | state_name == "New York") |> 
   ggplot(aes(x = date, y = Hosp, color = state_name)) + geom_point()
 ```
 
 2. Are there any conclusions you can draw?
-
+From mid October, New York has had a consistent high amount of COVID hospitalizations. Florida has had a positive liner growth of hospitalizations. Massachusetts has also had a positive liner growth, but it's slower than Florida. Overall, Florida's growth in hospitalizations has been the most out of the three states.
 
 3. What were you not able to do due to not having the R knowledge?
-
+I want to show a line of best line for each state to show the slopes.
 
 4. What other data would be useful to better understand this data?
-It would be useful if we had data from further into the year and the amount of vaccinations carried out for each race and state, so we could see if that effects the amount of hospitalizations.
+It would be useful if we had data from further into the year and the amount of vaccinations carried out for each state, so we could see if that effects the amount of hospitalizations. I would also want data on hospitalizations per capita to take into account state population.
